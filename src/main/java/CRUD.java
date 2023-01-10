@@ -59,19 +59,6 @@ public class CRUD {
         System.out.println(persona.getNombre());
         transaction.commit();
     }
-    public static void mostrarBuzon(Statement st, Connection con, String nombre, String tabla) {
-        try {
-            PreparedStatement ps = con.prepareStatement("SELECT * from ad2223_asosa.Buzon WHERE "+ tabla + " NOT LIKE " + nombre);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
-                System.out.println("chat: " + rs.getString("chat") + " mensaje: " + rs.getString("mensaje") +
-                        " fecha: " + rs.getDate("fecha") + " hora: " + rs.getTime("hora") + "leido: " + rs.getBoolean("leido"));
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
     private static void actualizar(int id,String nombre, String tipo) throws Exception {
         session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
