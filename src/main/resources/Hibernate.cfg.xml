@@ -16,5 +16,9 @@
         <property name="show_sql">true</property>
         <!-- Establece el contexto de la sesion-->
         <property name="current_session_context_class">thread</property>
+        <property name="hbm2ddl.auto">create</property>
+        <!--<mapping class="PersonasEntity"/>-->
+        <mapping class="Alumnado"/>
+        <mapping class="Direccion"/>
     </session-factory>
 </hibernate-configuration>
